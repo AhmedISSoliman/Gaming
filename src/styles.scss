@@ -1,0 +1,76 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    // padding-top: 60px;
+    color: #aaa;
+    background-color: #272b30;
+    overflow-x: hidden;
+}
+
+h1{
+  font-size:calc( 1.375rem + 1.5vw )
+}
+.h3, h3 {
+    font-size: calc(1.3rem + .6vw);
+}
+.jumbotron {
+    background: url('./assets/imgs/paladins.b44d33d6e7ee1ba8.png');
+    background-repeat: no-repeat;
+    background-color: #1c1e22;
+    background-position: top;
+    background-size: contain;
+    border-radius: 0.3rem;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(0,0,0,.6);
+    padding: 4rem 2rem;
+    border-radius:0
+}
+
+.ftg-blue {
+    color: #49acff!important;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #32383e;
+    background-clip: border-box;
+    border: 0 solid rgba(0,0,0,.6);
+    border-radius: 0.25rem;
+}
+.text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.badge-ftg {
+    color: #fff;
+    background-color: #4799eb;
+}
+hr {
+    margin: 1rem 0;
+    color: inherit;
+    border: 0;
+    border-top: 1px solid;
+    opacity: .25;
+}
+.bg-register-image {
+    background: url('./assets/imgs/gaming.ebaf2ffc84f4451d.jpg');
+    // background-position: cover;
+    background-size: 100% 100%;
+}.login {
+    background-color: #32383e;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    text-shadow: -1px -1px 0 rgb(0 0 0 / 30%);
+}
+.deep-dark {
+    border: 0 solid rgba(0,0,0,.6);
+    border-radius: 5px;
+}
+.a2 {
+    color: #4799eb;
+    text-decoration: none;
+    background-color: transparent;
+}

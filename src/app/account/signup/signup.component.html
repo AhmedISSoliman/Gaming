@@ -1,0 +1,73 @@
+<div class="container p-lg-5">
+  <div class="register card o-hidden border-0 shadow-lg">
+    <div class="card-body p-0">
+      <div class="row">
+        <div class="col-lg-6 d-none d-lg-block bg-register-image"></div>
+        <div class="col-lg-6 login">
+          <div class="p-5">
+            <div class="text-center">
+              <h1 class="h4 text-gray-900 mb-4">Create My Account</h1>
+            </div>
+            <form [formGroup]="mainForm" (ngSubmit)="onSubmit()">
+              <div class="from-group mb-3">
+                <input type="text" class="form-control form-control-user deep-dark py-2" formControlName="name"
+                  id="name" name="name" placeholder="Username">
+                <div
+                  *ngIf="(mainForm.controls.name.touched||isFormSubmitted)&& mainForm.controls.name.errors&&mainForm.controls.name.errors.required">
+                  <strong class="text-danger"> Username is required</strong>
+                </div>
+                <div
+                  *ngIf="(mainForm.controls.name.touched||isFormSubmitted)&& mainForm.controls.name.errors&&mainForm.controls.name.errors.minlength">
+                  <strong class="text-danger"> Username is minlength 5 chars</strong>
+                </div>
+                <div
+                  *ngIf="(mainForm.controls.name.touched||isFormSubmitted)&& mainForm.controls.name.errors&&mainForm.controls.name.errors.maxlength">
+                  <strong class="text-danger"> Password is maxlength 20 chars</strong>
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control form-control-user deep-dark py-2" formControlName="email"
+                  id="email" name="email" placeholder="Email">
+                <div
+                  *ngIf="(mainForm.controls.email.touched||isFormSubmitted)&& mainForm.controls.email.errors&&mainForm.controls.email.errors.required!=null">
+                  <strong class="text-danger"> Email is required</strong>
+                </div>
+                <div
+                  *ngIf="(mainForm.controls.email.touched||isFormSubmitted)&&mainForm.controls.email.errors&&mainForm.controls.email.errors.email !=null">
+                  <strong class="text-danger">Email is not valid</strong>
+                </div>
+              </div>
+              <div class="from-group">
+                <input type="text" class="form-control form-control-user deep-dark py-2" formControlName="password"
+                  id="password" name="password" placeholder="Password">
+                <div
+                  *ngIf="(mainForm.controls.password.touched||isFormSubmitted)&& mainForm.controls.password.errors&&mainForm.controls.password.errors.required">
+                  <strong class="text-danger"> Password is required</strong>
+                </div>
+                <div
+                  *ngIf="(mainForm.controls.password.touched||isFormSubmitted)&& mainForm.controls.password.errors&&mainForm.controls.password.errors.pattern">
+                  <strong class="text-danger"> Password is not valid</strong>
+                </div>
+              </div>
+              <button type="submit" name="submitButton" class="btn btn-primary btn-user btn-block w-100 my-3">Create
+                Account</button>
+            </form>
+            <div class="text-center mt-2">
+              <div class="text-muted small">This site is protected by reCAPTCHA and the Google <a
+                  href="https://policies.google.com/privacy" class="text-secondary">Privacy Policy</a> and <a
+                  href="https://policies.google.com/terms" class="text-secondary">Terms of Service</a> apply.
+              </div>
+            </div>
+            <hr>
+            <div class="text-center">
+              <span class="small">Already have account? </span>
+              <a routerLink="/login" class="small a2">Login
+                <i class="fas fa-chevron-right small"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

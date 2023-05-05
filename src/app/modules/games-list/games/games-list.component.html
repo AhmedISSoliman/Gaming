@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="row my-4">
+    <div class="col-12">
+      <div class="row">
+        <div class="col-12 col-md-4">
+          <div ngbDropdown class="d-inline-block w-100">
+            <button type="button" class="btn btn-outline-light w-100" id="dropdownBasic1" ngbDropdownToggle>
+              PlatForms
+            </button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="w-100">
+              <button (click)="getGamesByPlatform(item.name)" ngbDropdownItem
+                *ngFor="let item of listOfplatForms">{{item.displayName}}</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div ngbDropdown class="d-inline-block w-100">
+            <button type="button" class="btn btn-outline-light w-100" id="dropdownBasic2" ngbDropdownToggle>
+              Sort-by
+            </button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic2" class="w-100">
+              <button (click)="getSortedGames(item.name)" ngbDropdownItem
+                *ngFor="let item of listOfSorted">{{item.displayName}}</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div ngbDropdown class="d-inline-block w-100">
+            <button type="button" class="btn btn-outline-light w-100" id="dropdownBasic3" ngbDropdownToggle>
+              Categories
+            </button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic3" class="w-100">
+              <button (click)="getGamesByCategory(item.name)" ngbDropdownItem
+                *ngFor="let item of listOfCategories">{{item.displayName}}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-4" *ngFor="let item of gamesList">
+      <div style="cursor: pointer;" class="game card mb-4 grow shadow" tabindex="0" (click)="getGameDetails(item.id)">
+        <div class="game-img"><img alt="" class="w-100" [src]="item.thumbnail"></div>
+        <div class="game-body p-3">
+          <div class="d-flex justify-content-between align-items-center">
+            <h4 class="card-title text-truncate">{{item.title}}</h4><span
+              class="badge badge-ftg py-2 px-2 float-right">FREE</span>
+          </div>
+          <p class="text-muted">{{item.short_description | slice:0:50}}...</p>
+          <div class="d-flex justify-content-between"><i class="fas fa-plus-square"></i>
+            <div class="d-flex mb-n2 justify-content-between align-items-center"><span
+                class="badge badge-secondary text-dark badge-genre me-2" style="
+                    margin-right: 9px;
+                ">{{item.genre}}</span><i title="Available on Windows"
+                class="fab fa-windows text-muted stretched-link"></i>
+              <!---->
+              <!---->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
